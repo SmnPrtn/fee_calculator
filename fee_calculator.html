@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank-Gebührenrechner: Vergleichen und bis zu 40% sparen</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Kostenloser Gebühren-Vergleichsrechner für Banken und Zahlungsanbieter. Finden Sie das günstigste System und sparen Sie bis zu 40% Ihrer Banking-Kosten.">
+    <meta name="theme-color" content="#007bff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Gebührenrechner">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkJhbmstR2Viw6locmVucmVjaG5lcjogVmVyZ2xlaWNoZW4gdW5kIGJpcyB6dSA0MCUgc3BhcmVuIiwKICAic2hvcnRfbmFtZSI6ICJHZWJ1AHJLBNJLY2huZXIiLAogICJkZXNjcmlwdGlvbiI6ICJLb3N0ZW5sb3NlciBHZWLDvGhyZW4tVmVyZ2xlaWNoc3JlY2huZXIgZsO8ciBCYW5rZW4gdW5kIFphaGx1bmdzYW5iaWV0ZXIiLAogICJzdGFydF91cmwiOiAiLyIsCiAgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsCiAgImJhY2tncm91bmRfY29sb3IiOiAiI2Y1ZjVmNSIsCiAgInRoZW1lX2NvbG9yIjogIiMwMDdiZmYiLAogICJvcmllbnRhdGlvbiI6ICJwb3J0cmFpdC1wcmltYXJ5IiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCM2FXUjBhRDBpTVRJNElpQm9aV2xuYUhROUlqRXlPQ0lnZG1sbGQwSnZlRDBpTUNBd0lERTNNaUF4TnpJaUlHWnBiR3c5SWlNd01EZGlabVlpSUhodGJHNXpQU0pvZEhSd09pOHZkM2QzTG5jekxtOXlaeTh5TURBd0wzTjJaeUkrUEhCaGRHZ2daRDBpVFRJd0lEWXdJRkU1TUNBMk1DQTNNakF6TUNBMk1DQTRPQ0EyTUNBM01qQXpNQ0EyTUNBNE9DQTJNRWMyTUNBd01UZ3RNall1TnpReElERTBJRFl3SWpvOEwzQmhkR2crUEhCaGRHZ2daRDBpVFRnNElEWXdJRGszTWpBdU9UWTJJREV5TmkweklERTJOeUF3SURNM0xUa3dJRTlMVFRFME1DQXlNRWd6TXpGaE1qQXlNRUV5TUVCd0lEZ3dJRWQyTXk0ME5qZ3dNVE10TVM0MU1rTkROVGN1TnpVNUlEUXhMamd4TXpBeUxqazBJRFU0TGpNMUlEWTJMakUwSWpvOEwzQmhkR2crUEhCaGRHZ2daRDBpVFRGdGVrTXlNakJoTWpReUxqWTFNakEwTWpSVU5ERTBJRFl6TGpNME1qSmhNVFl3SWpvOEwzQmhkR2crUEM5emRtYysiLAogICAgICAic2l6ZXMiOiAiMTI4eDEyOCIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiCiAgICB9LAogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjNhV1IwYUQwaU5URXlJaUJvWldsbmFIUTlJalV4TWlJZ2RtbGxkMEp2ZUQwaU1DQXdJRGMwTWlBM05ESWlJR1pwYkd3OUlpTXdNRGRpWm1ZaUlIaHRiRzV6UFNKb2RIUndPaTh2ZDNkM0xtY3pMbTl5Wnk4eU1EQXdMM04yWnlJK1BIQmhkR2dnWkQwaVRUZ3dJREl3TURBQk56QXdJRFl3UVRFMk1DQXhOakF3TURsdk1DQXpNaTAzTWpBdE16SXRPREJvTVRNNGJUSXdJRFEzVlRRME1pQkRNRmMwTXpVdU1UTXpJREU1TnkwNUlESXlMamc0TmkweU1pODJJakkxTGpBMU5pMHpjeTQwTkRVdE1TNDFSa011TnpnMUlEQWdNQzR4SWprM0lETTNUVGN0TlVFeUlEVTVja0YxT0Q0OEwzQmhkR2crUEM5emRtYysiLAogICAgICAic2l6ZXMiOiAiNTEyeDUxMiIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiCiAgICB9CiAgXQp9">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCA3NCA3NCIgZmlsbD0iIzAwN2JmZiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOCAtNSBROSAtNSA3MiAzMCA2MCA4OCA2MCA3MiAzMCA2MCA4OCA2MEg2MCAzNy0yLjctMjY5IDE0IDYwIi8+PHBhdGggZD0iTTg4IDYwIDkzNzIuOTY2IDEyNi0zIDE2NyAwIDM3LTkwIE9LTTQwIDIwSDMzMWEyMDIwQTIwQHAgODBGdjMuNDY4MDEzLTEuNTJDRDU3Ljc1OSA0MS44MTMwMi45NCA1OC4zNSA2Ni4xNCIvPjxwYXRoIGQ9Ik0xbXpDMjIwYTI0Mi42NTIwNDI0VDQxNCA2My4zNDIyYTE2MCIvPjwvc3ZnPg==">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .main-controls {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .control-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .control-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input, button, select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 4px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .settings-btn {
+            background: #6c757d;
+        }
+        .settings-btn:hover {
+            background: #545b62;
+        }
+        .add-system-btn {
+            background: #28a745;
+        }
+        .add-system-btn:hover {
+            background: #1e7e34;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 1000px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: black;
+        }
+        
+        .system-config {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+        .system-config h4 {
+            margin-top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .delete-system {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .delete-system:hover {
+            background: #c82333;
+        }
+        
+        .config-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .config-section {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .config-section h5 {
+            margin: 0 0 15px 0;
+            color: #495057;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .config-row {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .config-row .control-group {
+            width: 100%;
+        }
+        
+        .config-row .control-group input {
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .limits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .result-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+        .result-card.winner {
+            border-left-color: #28a745;
+            background: #d4edda;
+        }
+        .result-card h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .cost {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .winner .cost {
+            color: #28a745;
+        }
+        .summary {
+            background: #e9ecef;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .table-container {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        th, td {
+            padding: 8px 12px;
+            text-align: right;
+            border-bottom: 1px solid #eee;
+        }
+        th {
+            background: #f8f9fa;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+        }
+        .cost-cell {
+            font-weight: bold;
+        }
+        
+        .info-text {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .main-controls {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 15px;
+            }
+            
+            .config-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .limits-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .button-group button {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 2% auto;
+                padding: 20px;
+                max-height: 85vh;
+            }
+            
+            .results {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .result-card {
+                padding: 15px;
+            }
+            
+            .cost {
+                font-size: 20px;
+            }
+            
+            .table-container {
+                font-size: 14px;
+            }
+            
+            th, td {
+                padding: 6px 8px;
+                font-size: 12px;
+            }
+            
+            .info-text {
+                padding: 12px;
+                font-size: 14px;
+            }
+            
+            h1 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            
+            .system-config {
+                padding: 15px;
+                margin: 10px 0;
+            }
+            
+            .system-config h4 {
+                font-size: 16px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .delete-system {
+                align-self: flex-end;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .main-controls {
+                padding: 10px;
+            }
+            
+            .button-group button {
+                padding: 12px 16px;
+                font-size: 14px;
+            }
+            
+            .modal-content {
+                width: 98%;
+                padding: 15px;
+            }
+            
+            .result-card {
+                padding: 12px;
+            }
+            
+            .cost {
+                font-size: 18px;
+            }
+            
+            th, td {
+                padding: 4px 6px;
+                font-size: 11px;
+            }
+            
+            .table-container {
+                max-height: 300px;
+            }
+            
+            h1 {
+                font-size: 20px;
+            }
+            
+            .config-section {
+                padding: 12px;
+            }
+            
+            .system-config {
+                padding: 12px;
+            }
+            
+            input, select, button {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏦 Universeller Gebührensystem-Vergleich</h1>
+        
+        <div class="info-text">
+            <strong>So funktioniert's:</strong> Konfigurieren Sie verschiedene Gebührensysteme (Banken, Zahlungsanbieter, etc.) und vergleichen Sie die Kosten bei verschiedenen Transaktionsszenarien.
+        </div>
+        
+        <div class="main-controls">
+            <div class="control-group">
+                <label>Anzahl Transaktionen:</label>
+                <input type="number" id="anzahl" value="400" min="1" max="2000">
+            </div>
+            <div class="control-group">
+                <label>Betrag von (EUR):</label>
+                <input type="number" id="minBetrag" value="200" min="0" step="0.01">
+            </div>
+            <div class="control-group">
+                <label>Betrag bis (EUR):</label>
+                <input type="number" id="maxBetrag" value="400" min="0" step="0.01">
+            </div>
+            <div class="control-group">
+                <label>Zahlungsart 1 Anteil (%):</label>
+                <input type="number" id="zahlungsart1Anteil" value="60" min="0" max="100">
+            </div>
+            <div class="control-group">
+                <label>Simulationszeitraum:</label>
+                <select id="zeitraum">
+                    <option value="1">1 Monat</option>
+                    <option value="3">3 Monate</option>
+                    <option value="6">6 Monate</option>
+                    <option value="12" selected>12 Monate</option>
+                    <option value="24">24 Monate</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button id="btnSimulation">🔄 Neue Simulation</button>
+            <button class="settings-btn" id="btnSettings">⚙️ Systeme konfigurieren</button>
+            <button class="add-system-btn" id="btnAddSystem">➕ System hinzufügen</button>
+        </div>
+
+        <div class="results" id="results"></div>
+        <div class="summary" id="summary"></div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr id="tableHeader">
+                        <th>Nr.</th>
+                        <th>Betrag (EUR)</th>
+                        <th>Zahlungsart</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionTable"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>💼 Gebührensysteme konfigurieren</h2>
+            <div id="systemConfigs"></div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <button id="btnSaveSettings">💾 Einstellungen speichern</button>
+                <button id="btnResetDefaults" style="background: #ffc107; color: #000;">🔄 Zurücksetzen</button>
+                <button id="btnAddSystemModal" class="add-system-btn">➕ Neues System</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        var allTransactions = [];
+        var paymentSystems = [
+            {
+                id: 1,
+                name: "System A (Klassisch)",
+                payment1Name: "Bankomat",
+                payment2Name: "Kreditkarte",
+                payment1Percent: 0.79,
+                payment1Fixed: 0,
+                payment1Monthly: 0,
+                payment1Yearly: 0,
+                payment2Percent: 1.99,
+                payment2Fixed: 0,
+                payment2Monthly: 0,
+                payment2Yearly: 0,
+                minFee: 0,
+                maxFee: 999999,
+                color: "#007bff"
+            },
+            {
+                id: 2,
+                name: "System B (Modern)",
+                payment1Name: "Bankomat",
+                payment2Name: "Kreditkarte",
+                payment1Percent: 0.49,
+                payment1Fixed: 0.11,
+                payment1Monthly: 0,
+                payment1Yearly: 0,
+                payment2Percent: 1.39,
+                payment2Fixed: 0.15,
+                payment2Monthly: 0,
+                payment2Yearly: 0,
+                minFee: 0,
+                maxFee: 999999,
+                color: "#28a745"
+            }
+        ];
+
+        function showSettings() {
+            document.getElementById('settingsModal').style.display = 'block';
+            buildSystemConfigs();
+        }
+
+        function hideSettings() {
+            document.getElementById('settingsModal').style.display = 'none';
+        }
+
+        function createNewSystem() {
+            var maxId = 0;
+            for (var i = 0; i < paymentSystems.length; i++) {
+                if (paymentSystems[i].id > maxId) maxId = paymentSystems[i].id;
+            }
+            var newSystem = {
+                id: maxId + 1,
+                name: "System " + String.fromCharCode(65 + paymentSystems.length),
+                payment1Name: "Zahlungsart 1",
+                payment2Name: "Zahlungsart 2",
+                payment1Percent: 0,
+                payment1Fixed: 0,
+                payment1Monthly: 0,
+                payment1Yearly: 0,
+                payment2Percent: 0,
+                payment2Fixed: 0,
+                payment2Monthly: 0,
+                payment2Yearly: 0,
+                minFee: 0,
+                maxFee: 999999,
+                color: '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0')
+            };
+            paymentSystems.push(newSystem);
+            startSimulation();
+        }
+
+        function removeSystem(id) {
+            if (paymentSystems.length <= 1) {
+                alert('Sie müssen mindestens ein System behalten!');
+                return;
+            }
+            var newSystems = [];
+            for (var i = 0; i < paymentSystems.length; i++) {
+                if (paymentSystems[i].id !== id) {
+                    newSystems.push(paymentSystems[i]);
+                }
+            }
+            paymentSystems = newSystems;
+            buildSystemConfigs();
+            startSimulation();
+        }
+
+        function buildSystemConfigs() {
+            var container = document.getElementById('systemConfigs');
+            container.innerHTML = '';
+            
+            for (var i = 0; i < paymentSystems.length; i++) {
+                var system = paymentSystems[i];
+                var div = document.createElement('div');
+                div.className = 'system-config';
+                div.style.borderLeftColor = system.color;
+                
+                var html = '<h4>' + system.name;
+                if (paymentSystems.length > 1) {
+                    html += '<button class="delete-system" onclick="window.feeComparison.removeSystem(' + system.id + ')">🗑️ Löschen</button>';
+                }
+                html += '</h4>';
+                
+                html += '<div style="margin-bottom: 15px;">';
+                html += '<div class="control-group">';
+                html += '<label>System Name:</label>';
+                html += '<input type="text" value="' + system.name + '" onchange="window.feeComparison.modifySystem(' + system.id + ', \'name\', this.value)">';
+                html += '</div></div>';
+                
+                html += '<div class="config-grid">';
+                
+                html += '<div class="config-section">';
+                html += '<h5>💳 ' + system.payment1Name + ' Konfiguration</h5>';
+                html += '<div class="config-row">';
+                html += '<div class="control-group"><label>Name:</label><input type="text" value="' + system.payment1Name + '" onchange="window.feeComparison.modifySystem(' + system.id + ', \'payment1Name\', this.value)"></div>';
+                html += '<div class="control-group"><label>Prozentsatz (%):</label><input type="number" step="0.01" value="' + system.payment1Percent + '" onchange="window.feeComparison.modifySystem(' + system.id + ', \'payment1Percent\', parseFloat(this.value) || 0)"></div>';
+                html += '<div class="control-group"><label>Fix pro Transaktion (EUR):</label><input type="number" step="0.01" value="' + system.payment1Fixed + '" onchange="window.feeComparison.modifySystem(' + system.id + ', \'payment1Fixed\', parseFloat(this.value) || 0)"></div>';
+                html += '<div class="control-group"><label>Monatlich (EUR):</label><input type="number" step="0.01" value="' + system.payment1Monthly + '" onchange="window.feeComparison.modifySystem(' + system.id + ', \'payment1Monthly\', parseFloat(this.value) || 0)"></div>';
+                html += '<div class="control-group"><label>Jährlich (EUR):</label><input type="number" step="0.01" value="' + system.payment1Yearly + '" onchange="window.feeComparison.modifySystem(' + system.id + ', \'payment1Yearly\', parseFloat(this.value) || 0)"></div>';
+                html += '</div></div>';
+                
+                html += '<div class="config-section">';
+                html += '<h5>🏦 ' + system.payment2Name + ' Konfiguration</h5>';
+                html += '<div class="config-row">';
+                html += '<div class="control-group"><label>Name:</label><input type="text" value="' + system.payment2Name + '" onchange="window.feeComparison.modifySystem(' + system.id + ', \'payment2Name\', this.value)"></div>';
+                html += '<div class="control-group"><label>Prozentsatz (%):</label><input type="number" step="0.01" value="' + system.payment2Percent + '" onchange="window.feeComparison.modifySystem(' + system.id + ', \'payment2Percent\', parseFloat(this.value) || 0)"></div>';
+                html += '<div class="control-group"><label>Fix pro Transaktion (EUR):</label><input type="number" step="0.01" value="' + system.payment2Fixed + '" onchange="window.feeComparison.modifySystem(' + system.id + ', \'payment2Fixed\', parseFloat(this.value) || 0)"></div>';
+                html += '<div class="control-group"><label>Monatlich (EUR):</label><input type="number" step="0.01" value="' + system.payment2Monthly + '" onchange="window.feeComparison.modifySystem(' + system.id + ', \'payment2Monthly\', parseFloat(this.value) || 0)"></div>';
+                html += '<div class="control-group"><label>Jährlich (EUR):</label><input type="number" step="0.01" value="' + system.payment2Yearly + '" onchange="window.feeComparison.modifySystem(' + system.id + ', \'payment2Yearly\', parseFloat(this.value) || 0)"></div>';
+                html += '</div></div></div>';
+                
+                html += '<div style="margin-top: 15px; padding: 15px; background: #fff3cd; border-radius: 6px;">';
+                html += '<h5>⚖️ Gebührenlimits</h5>';
+                html += '<div class="limits-grid">';
+                html += '<div class="control-group"><label>Min. Gebühr (EUR):</label><input type="number" step="0.01" value="' + system.minFee + '" onchange="window.feeComparison.modifySystem(' + system.id + ', \'minFee\', parseFloat(this.value) || 0)"></div>';
+                html += '<div class="control-group"><label>Max. Gebühr (EUR):</label><input type="number" step="0.01" value="' + system.maxFee + '" onchange="window.feeComparison.modifySystem(' + system.id + ', \'maxFee\', parseFloat(this.value) || 999999)"></div>';
+                html += '</div></div>';
+                
+                div.innerHTML = html;
+                container.appendChild(div);
+            }
+        }
+
+        function modifySystem(id, field, value) {
+            for (var i = 0; i < paymentSystems.length; i++) {
+                if (paymentSystems[i].id === id) {
+                    paymentSystems[i][field] = value;
+                    if (field.indexOf('Name') !== -1) {
+                        buildSystemConfigs();
+                    }
+                    break;
+                }
+            }
+        }
+
+        function restoreDefaults() {
+            paymentSystems = [
+                {
+                    id: 1,
+                    name: "System A (Klassisch)",
+                    payment1Name: "Bankomat",
+                    payment2Name: "Kreditkarte",
+                    payment1Percent: 0.79,
+                    payment1Fixed: 0,
+                    payment1Monthly: 0,
+                    payment1Yearly: 0,
+                    payment2Percent: 1.99,
+                    payment2Fixed: 0,
+                    payment2Monthly: 0,
+                    payment2Yearly: 0,
+                    minFee: 0,
+                    maxFee: 999999,
+                    color: "#007bff"
+                },
+                {
+                    id: 2,
+                    name: "System B (Modern)",
+                    payment1Name: "Bankomat",
+                    payment2Name: "Kreditkarte",
+                    payment1Percent: 0.49,
+                    payment1Fixed: 0.11,
+                    payment1Monthly: 0,
+                    payment1Yearly: 0,
+                    payment2Percent: 1.39,
+                    payment2Fixed: 0.15,
+                    payment2Monthly: 0,
+                    payment2Yearly: 0,
+                    minFee: 0,
+                    maxFee: 999999,
+                    color: "#28a745"
+                }
+            ];
+            buildSystemConfigs();
+        }
+
+        function startSimulation() {
+            var count = parseInt(document.getElementById('anzahl').value) || 400;
+            var minAmount = parseFloat(document.getElementById('minBetrag').value) || 200;
+            var maxAmount = parseFloat(document.getElementById('maxBetrag').value) || 400;
+            var payment1Ratio = (parseFloat(document.getElementById('zahlungsart1Anteil').value) || 60) / 100;
+            var period = parseInt(document.getElementById('zeitraum').value) || 12;
+            
+            allTransactions = [];
+            
+            for (var i = 0; i < count; i++) {
+                var amount = Math.random() * (maxAmount - minAmount) + minAmount;
+                var paymentType = Math.random() < payment1Ratio ? 'payment1' : 'payment2';
+                
+                allTransactions.push({
+                    nr: i + 1,
+                    amount: amount,
+                    type: paymentType
+                });
+            }
+            
+            computeCosts(period);
+            showResults();
+        }
+
+        function computeCosts(period) {
+            for (var s = 0; s < paymentSystems.length; s++) {
+                var system = paymentSystems[s];
+                var transactionTotal = 0;
+                var payment1Count = 0;
+                var payment2Count = 0;
+
+                for (var t = 0; t < allTransactions.length; t++) {
+                    var transaction = allTransactions[t];
+                    var cost = 0;
+                    if (transaction.type === 'payment1') {
+                        cost = (transaction.amount * system.payment1Percent / 100) + system.payment1Fixed;
+                        payment1Count++;
+                    } else {
+                        cost = (transaction.amount * system.payment2Percent / 100) + system.payment2Fixed;
+                        payment2Count++;
+                    }
+                    
+                    cost = Math.max(system.minFee, Math.min(system.maxFee, cost));
+                    
+                    transaction['cost_' + system.id] = cost;
+                    transactionTotal += cost;
+                }
+
+                var payment1FixedCosts = (system.payment1Monthly * period) + (system.payment1Yearly * period / 12);
+                var payment2FixedCosts = (system.payment2Monthly * period) + (system.payment2Yearly * period / 12);
+                var totalFixedCosts = payment1FixedCosts + payment2FixedCosts;
+                
+                system.transactionTotal = transactionTotal;
+                system.fixedCosts = totalFixedCosts;
+                system.payment1FixedCosts = payment1FixedCosts;
+                system.payment2FixedCosts = payment2FixedCosts;
+                system.grandTotal = transactionTotal + totalFixedCosts;
+                system.payment1Count = payment1Count;
+                system.payment2Count = payment2Count;
+            }
+        }
+
+        function showResults() {
+            var tableHeader = document.getElementById('tableHeader');
+            var headerHTML = '<th>Nr.</th><th>Betrag (EUR)</th><th>Zahlungsart</th>';
+            for (var i = 0; i < paymentSystems.length; i++) {
+                headerHTML += '<th style="color: ' + paymentSystems[i].color + '">' + paymentSystems[i].name + '</th>';
+            }
+            tableHeader.innerHTML = headerHTML;
+
+            var minTotal = paymentSystems[0].grandTotal;
+            for (var i = 1; i < paymentSystems.length; i++) {
+                if (paymentSystems[i].grandTotal < minTotal) {
+                    minTotal = paymentSystems[i].grandTotal;
+                }
+            }
+            var winners = [];
+            for (var i = 0; i < paymentSystems.length; i++) {
+                if (Math.abs(paymentSystems[i].grandTotal - minTotal) < 0.01) {
+                    winners.push(paymentSystems[i]);
+                }
+            }
+
+            var resultsContainer = document.getElementById('results');
+            resultsContainer.innerHTML = '';
+            
+            for (var i = 0; i < paymentSystems.length; i++) {
+                var system = paymentSystems[i];
+                var isWinner = false;
+                for (var w = 0; w < winners.length; w++) {
+                    if (winners[w].id === system.id) {
+                        isWinner = true;
+                        break;
+                    }
+                }
+                
+                var card = document.createElement('div');
+                card.className = 'result-card' + (isWinner ? ' winner' : '');
+                card.style.borderLeftColor = system.color;
+                
+                var cardHTML = '<h3>' + system.name + (isWinner ? ' 🏆' : '') + '</h3>';
+                cardHTML += '<div style="font-size: 12px; margin-bottom: 10px;">';
+                cardHTML += system.payment1Name + ': ' + system.payment1Percent + '% + €' + system.payment1Fixed + '<br>';
+                cardHTML += system.payment2Name + ': ' + system.payment2Percent + '% + €' + system.payment2Fixed;
+                
+                if (system.payment1FixedCosts > 0) {
+                    cardHTML += '<br>' + system.payment1Name + ' Fix: €' + system.payment1FixedCosts.toFixed(2);
+                }
+                if (system.payment2FixedCosts > 0) {
+                    cardHTML += '<br>' + system.payment2Name + ' Fix: €' + system.payment2FixedCosts.toFixed(2);
+                }
+                
+                cardHTML += '</div>';
+                cardHTML += '<div class="cost" style="color: ' + system.color + '">€ ' + system.grandTotal.toFixed(2) + '</div>';
+                cardHTML += '<div style="font-size: 12px; margin-top: 10px;">';
+                cardHTML += 'Transaktionen: €' + system.transactionTotal.toFixed(2) + '<br>';
+                cardHTML += 'Fixkosten gesamt: €' + system.fixedCosts.toFixed(2) + '<br>';
+                cardHTML += '<small>' + system.payment1Count + ' × ' + system.payment1Name + ', ' + system.payment2Count + ' × ' + system.payment2Name + '</small>';
+                cardHTML += '</div>';
+                
+                card.innerHTML = cardHTML;
+                resultsContainer.appendChild(card);
+            }
+
+            var period = parseInt(document.getElementById('zeitraum').value) || 12;
+            var summaryDiv = document.getElementById('summary');
+            
+            if (winners.length === 1) {
+                var winner = winners[0];
+                var secondBest = null;
+                var minOtherTotal = 999999999;
+                
+                for (var i = 0; i < paymentSystems.length; i++) {
+                    if (paymentSystems[i].id !== winner.id && paymentSystems[i].grandTotal < minOtherTotal) {
+                        minOtherTotal = paymentSystems[i].grandTotal;
+                        secondBest = paymentSystems[i];
+                    }
+                }
+                
+                if (secondBest) {
+                    var savings = secondBest.grandTotal - winner.grandTotal;
+                    var percentSavings = (savings / secondBest.grandTotal * 100).toFixed(1);
+                    
+                    var summaryHTML = '<h3>🎯 Beste Wahl: ' + winner.name + '</h3>';
+                    summaryHTML += '<strong>Ersparnis gegenüber ' + secondBest.name + ': €' + savings.toFixed(2) + '</strong> (' + percentSavings + '%)<br>';
+                    summaryHTML += '<small>Simulationszeitraum: ' + period + ' Monat' + (period === 1 ? '' : 'e') + ' | ' + allTransactions.length + ' Transaktionen</small>';
+                    
+                    summaryDiv.innerHTML = summaryHTML;
+                }
+            } else {
+                var winnerNames = [];
+                for (var i = 0; i < winners.length; i++) {
+                    winnerNames.push(winners[i].name);
+                }
+                var winnerNamesStr = winnerNames.join(' und ');
+                
+                var summaryHTML = '<h3>🤝 Gleichstand: ' + winnerNamesStr + '</h3>';
+                summaryHTML += '<strong>Alle kosten identisch €' + minTotal.toFixed(2) + '</strong><br>';
+                summaryHTML += '<small>Simulationszeitraum: ' + period + ' Monat' + (period === 1 ? '' : 'e') + ' | ' + allTransactions.length + ' Transaktionen</small>';
+                
+                summaryDiv.innerHTML = summaryHTML;
+            }
+            
+            updateTransactionTable();
+        }
+
+        function updateTransactionTable() {
+            var tbody = document.getElementById('transactionTable');
+            tbody.innerHTML = '';
+            
+            var maxRows = Math.min(100, allTransactions.length);
+            for (var i = 0; i < maxRows; i++) {
+                var t = allTransactions[i];
+                var row = tbody.insertRow();
+                var paymentDisplay = t.type === 'payment1' ? 
+                    paymentSystems[0].payment1Name : paymentSystems[0].payment2Name;
+                
+                var rowHTML = '<td>' + t.nr + '</td>';
+                rowHTML += '<td>€ ' + t.amount.toFixed(2) + '</td>';
+                rowHTML += '<td>' + paymentDisplay + '</td>';
+                
+                for (var s = 0; s < paymentSystems.length; s++) {
+                    var costKey = 'cost_' + paymentSystems[s].id;
+                    rowHTML += '<td class="cost-cell" style="color: ' + paymentSystems[s].color + '">€ ' + t[costKey].toFixed(4) + '</td>';
+                }
+                
+                row.innerHTML = rowHTML;
+            }
+            
+            if (allTransactions.length > 100) {
+                var row = tbody.insertRow();
+                row.innerHTML = '<td colspan="' + (3 + paymentSystems.length) + '" style="text-align: center; font-style: italic;">... und ' + (allTransactions.length - 100) + ' weitere Transaktionen</td>';
+            }
+        }
+
+        // Event Listeners
+        document.getElementById('btnSimulation').addEventListener('click', startSimulation);
+        document.getElementById('btnSettings').addEventListener('click', showSettings);
+        document.getElementById('btnAddSystem').addEventListener('click', createNewSystem);
+        document.getElementById('closeModal').addEventListener('click', hideSettings);
+        document.getElementById('btnSaveSettings').addEventListener('click', function() {
+            hideSettings();
+            startSimulation();
+        });
+        document.getElementById('btnResetDefaults').addEventListener('click', restoreDefaults);
+        document.getElementById('btnAddSystemModal').addEventListener('click', function() {
+            createNewSystem();
+            buildSystemConfigs();
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            var settingsModal = document.getElementById('settingsModal');
+            if (event.target === settingsModal) {
+                hideSettings();
+            }
+        });
+
+        // Expose functions globally for inline event handlers
+        window.feeComparison = {
+            removeSystem: removeSystem,
+            modifySystem: modifySystem
+        };
+
+        // Initialize on load
+        startSimulation();
+
+        // PWA Installation
+        let deferredPrompt;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            showInstallButton();
+        });
+
+        function showInstallButton() {
+            var installDiv = document.createElement('div');
+            installDiv.id = 'install-banner';
+            installDiv.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; background: linear-gradient(135deg, #007bff, #28a745); color: white; padding: 15px; text-align: center; z-index: 9999; box-shadow: 0 2px 10px rgba(0,0,0,0.3);';
+            installDiv.innerHTML = '📱 <strong>App installieren</strong> - Nutzen Sie den Gebührenrechner offline! <button id="install-btn" style="background: white; color: #007bff; border: none; padding: 8px 16px; margin-left: 10px; border-radius: 20px; cursor: pointer; font-weight: bold;">Jetzt installieren</button> <button id="dismiss-install" style="background: transparent; color: white; border: 1px solid white; padding: 8px 16px; margin-left: 5px; border-radius: 20px; cursor: pointer;">Später</button>';
+            
+            document.body.appendChild(installDiv);
+
+            document.getElementById('install-btn').addEventListener('click', installApp);
+            document.getElementById('dismiss-install').addEventListener('click', function() {
+                installDiv.remove();
+            });
+        }
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('PWA installation accepted');
+                    }
+                    deferredPrompt = null;
+                    document.getElementById('install-banner').remove();
+                });
+            }
+        }
+
+        // Register Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                var swScript = `
+                    const CACHE_NAME = 'gebuehrenrechner-v1';
+                    const urlsToCache = [
+                        '/',
+                        '/index.html'
+                    ];
+
+                    self.addEventListener('install', function(event) {
+                        event.waitUntil(
+                            caches.open(CACHE_NAME)
+                                .then(function(cache) {
+                                    return cache.addAll(urlsToCache);
+                                })
+                        );
+                    });
+
+                    self.addEventListener('fetch', function(event) {
+                        event.respondWith(
+                            caches.match(event.request)
+                                .then(function(response) {
+                                    if (response) {
+                                        return response;
+                                    }
+                                    return fetch(event.request);
+                                }
+                            )
+                        );
+                    });
+                `;
+                
+                var blob = new Blob([swScript], { type: 'application/javascript' });
+                var swUrl = URL.createObjectURL(blob);
+                
+                navigator.serviceWorker.register(swUrl)
+                    .then(function(registration) {
+                        console.log('SW registered with scope: ', registration.scope);
+                    })
+                    .catch(function(error) {
+                        console.log('SW registration failed: ', error);
+                    });
+            });
+        }
+    })();
+    </script>
+
+    <!-- SEO Content Section -->
+    <div style="background: #f8f9fa; margin-top: 40px; padding: 30px; border-radius: 10px; border-top: 3px solid #007bff;">
+        <div style="max-width: 800px; margin: 0 auto; line-height: 1.6; color: #495057;">
+            <h2 style="color: #333; text-align: center; margin-bottom: 25px;">💰 Sparen Sie Hunderte Euro bei Bankgebühren</h2>
+            
+            <p><strong>Finden Sie das günstigste Zahlungssystem für Ihr Unternehmen oder Ihren Privatgebrauch!</strong> Unser kostenloser Gebühren-Vergleichsrechner analysiert präzise die Kosten verschiedener Banking-Anbieter und zeigt Ihnen, wo Sie am meisten sparen können.</p>
+
+            <h3 style="color: #007bff; margin-top: 25px;">🎯 Warum dieses Tool nutzen?</h3>
+            <ul style="margin-left: 20px;">
+                <li><strong>Realistische Simulation:</strong> Basierend auf Ihren tatsächlichen Transaktionsmustern</li>
+                <li><strong>Individuelle Analyse:</strong> Separate Bewertung von Bankomat- und Kreditkartengebühren</li>
+                <li><strong>Sofortige Ergebnisse:</strong> Sehen Sie auf einen Blick, welcher Anbieter am günstigsten ist</li>
+                <li><strong>Ersparnis-Berechnung:</strong> Erfahren Sie genau, wie viel Sie pro Jahr sparen können</li>
+                <li><strong>Vollständig kostenlos:</strong> Keine Registrierung, keine versteckten Kosten</li>
+            </ul>
+
+            <h3 style="color: #007bff; margin-top: 25px;">🏦 Für wen ist dieses Tool ideal?</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0;">
+                <div style="background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #28a745;">
+                    <strong>🏢 Unternehmen & KMUs</strong><br>
+                    Optimieren Sie Ihre Payment-Kosten und reduzieren Sie operative Ausgaben durch den Wechsel zum günstigsten Zahlungsanbieter.
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #17a2b8;">
+                    <strong>💼 Finanzberater</strong><br>
+                    Bieten Sie Ihren Kunden datenbasierte Empfehlungen für die optimale Banking-Strategie mit konkreten Einsparpotentialen.
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107;">
+                    <strong>👥 Privatpersonen</strong><br>
+                    Finden Sie heraus, welche Bank bei Ihrem Zahlungsverhalten die niedrigsten Gebühren verlangt.
+                </div>
+            </div>
+
+            <h3 style="color: #007bff; margin-top: 25px;">⚡ So einfach funktioniert's:</h3>
+            <ol style="margin-left: 20px;">
+                <li><strong>Transaktionsdaten eingeben:</strong> Anzahl und Beträge Ihrer typischen Zahlungen</li>
+                <li><strong>Zahlungssysteme konfigurieren:</strong> Fügen Sie die Gebührenstrukturen Ihrer favorisierten Banken hinzu</li>
+                <li><strong>Simulation starten:</strong> Lassen Sie das Tool Tausende Transaktionen simulieren</li>
+                <li><strong>Ergebnisse analysieren:</strong> Sehen Sie sofort, welcher Anbieter am günstigsten ist</li>
+                <li><strong>Geld sparen:</strong> Wechseln Sie zum optimalen Zahlungssystem und sparen Sie jährlich</li>
+            </ol>
+
+            <div style="background: #d4edda; border: 1px solid #c3e6cb; padding: 20px; border-radius: 8px; margin: 25px 0; text-align: center;">
+                <h4 style="color: #155724; margin-top: 0;">💡 Wussten Sie schon?</h4>
+                <p style="margin: 10px 0; color: #155724;"><strong>Kleine Unternehmen können durch den Wechsel zu einem optimalen Zahlungssystem durchschnittlich 15-40% ihrer Banking-Kosten sparen.</strong> Bei monatlichen Transaktionskosten von €200 entspricht das einer jährlichen Ersparnis von bis zu €960!</p>
+            </div>
+
+            <h3 style="color: #007bff; margin-top: 25px;">🔍 Vergleichen Sie diese beliebten Anbieter:</h3>
+            <p style="margin-bottom: 15px;">Unser Tool eignet sich perfekt zum Vergleich von:</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0;">
+                <span style="background: #e9ecef; padding: 5px 12px; border-radius: 15px; font-size: 14px;">Traditionelle Banken</span>
+                <span style="background: #e9ecef; padding: 5px 12px; border-radius: 15px; font-size: 14px;">Online-Banken</span>
+                <span style="background: #e9ecef; padding: 5px 12px; border-radius: 15px; font-size: 14px;">Fintech-Anbieter</span>
+                <span style="background: #e9ecef; padding: 5px 12px; border-radius: 15px; font-size: 14px;">Payment-Provider</span>
+                <span style="background: #e9ecef; padding: 5px 12px; border-radius: 15px; font-size: 14px;">Kreditkartenunternehmen</span>
+                <span style="background: #e9ecef; padding: 5px 12px; border-radius: 15px; font-size: 14px;">Business-Banking</span>
+            </div>
+
+            <div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 20px; border-radius: 8px; margin: 25px 0;">
+                <h4 style="color: #856404; margin-top: 0;">🚀 Starten Sie jetzt Ihre Kostenoptimierung!</h4>
+                <p style="margin: 10px 0; color: #856404;">Verschwenden Sie nicht länger Geld durch überteuerte Bankgebühren. Nutzen Sie unseren kostenlosen Vergleichsrechner und entdecken Sie, wie viel Sie sparen können. Bereits nach wenigen Minuten wissen Sie, welcher Anbieter für Sie am günstigsten ist.</p>
+                <p style="margin: 10px 0; color: #856404; text-align: center;"><strong>👆 Scrollen Sie nach oben und starten Sie Ihren kostenlosen Vergleich!</strong></p>
+            </div>
+
+            <p style="margin-top: 25px; font-size: 14px; color: #6c757d; text-align: center;"><em>Kostenlos • Keine Registrierung erforderlich • Sofortige Ergebnisse • 100% transparent</em></p>
+        </div>
+    </div>
+</body>
+</html>
